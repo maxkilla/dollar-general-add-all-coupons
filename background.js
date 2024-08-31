@@ -3,9 +3,19 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.action.onClicked.addListener((tab) => {
-    // Inject the main.js content script when the extension icon is clicked
-    chrome.scripting.executeScript({
-        target: {tabId: tab.id},
-        files: ['main.js']
-    });
+    console.log("Tab:", tab);
+    if (tab && tab.id !== undefined) {
+        chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            files: ['main.js']
+        }, () => {
+            if (chrome.runtime.lastError) {
+                console.error(`Script injection failed: ${chrome.runtime.lastError.message}`);
+            } else {
+                console.log("Script injected successfully.");
+            }
+        });
+    } else {
+        console.error("Tab ID is undefined. Script injection failed.");
+    }
 });
