@@ -5,7 +5,7 @@
   "description": "In DG Digital Coupons, add all coupons to My Coupons",
   
   "action": {
-    "default_popup": "popup.html",
+    "default_title": "dollar_general_add_all_coupons",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
