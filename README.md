@@ -3,7 +3,7 @@
 ## Introduction
 
 This is a Chrome extension that adds an "Add All Coupons" button to the Dollar
-General [Digital Coupons Gallery](https://dg.coupons.com/coupons/). The
+General [Digital Coupons Gallery](https://www.dollargeneral.com/deals/coupons). The
 Javascript action on this button will click on all the coupons in one shot,
 adding all of them to "My Coupons".
 
