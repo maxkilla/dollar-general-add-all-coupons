@@ -1,15 +1,20 @@
 function runSelect(event) {
     event.preventDefault();
+    addAllCoupons();
+}
 
+// This function will add all coupons
+function addAllCoupons() {
     try {
-        var pods = document.getElementsByClassName('pod');
+        // Select all "Add deal" buttons on the page
+        const addButtons = document.querySelectorAll('.deal-card__add-button');
+        
+        // Iterate through each button and simulate a click
+        addButtons.forEach(button => button.click());
 
-        // Click on every item.
-        for (var pod of pods) {
-            pod.click();
-        }
+        console.log(`${addButtons.length} coupons added successfully.`);
     } catch (error) {
-        console.error('Error clicking pods:', error);
+        console.error('Error adding coupons:', error);
     }
 }
 
