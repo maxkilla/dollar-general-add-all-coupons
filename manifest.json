@@ -12,7 +12,7 @@
     "content_scripts": [
 	{
 	    "matches": [
-		"https://dg.coupons.com/coupons*"
+		"https://www.dollargeneral.com/deals/coupons*"
 	    ],
 	    "js": ["main.js"]
 	}
