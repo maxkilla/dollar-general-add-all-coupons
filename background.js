@@ -4,6 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.action.onClicked.addListener((tab) => {
     console.log("Tab:", tab);
+    
     if (tab && tab.id !== undefined) {
         chrome.scripting.executeScript({
             target: { tabId: tab.id },
