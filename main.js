@@ -22,12 +22,13 @@ function init() {
     newbutton.appendChild(document.createTextNode('Add All Coupons'));
     newbutton.addEventListener('click', runSelect);
 
-    // Insert the button before pages.
+    // Get the element with class 'pages'
     var pages = document.getElementsByClassName('pages')[0];
     if (pages) {
+        // Insert the button before the 'pages' element
         pages.parentNode.insertBefore(newbutton, pages);
     } else {
-        console.error('No element with class "pages" found.');
+        console.error("No element with class 'pages' found.");
     }
 }
 
@@ -39,11 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             if (mutation.addedNodes.length) {
-                runSelect(); // or any other function to handle dynamic content
+                init(); // Re-run init when new nodes are added
             }
         });
     });
 
     observer.observe(document.body, { childList: true, subtree: true });
 });
-
